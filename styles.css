@@ -4,13 +4,13 @@
    ================================== */
 
 :root {
-    --primary: #0F4C81;
-    --primary-dark: #0a345c;
-    --secondary: #2A9D8F;
-    --accent: #F4A261;
-    --accent-light: #F9C784;
+    --primary: #655353;
+    --primary-dark: #584747;
+    --secondary: #141b1a;
+    --accent: #8f7865;
+    --accent-light: #aba49d;
     --light: #F8F9FA;
-    --dark: #1E293B;
+    --dark: #736060;
     --gray: #64748B;
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
@@ -179,17 +179,17 @@ body {
 
 /* ========= HERO SECTION ========= */
 .hero {
-    background-image: url('pic/ssssssss.jpg'); 
+    background-image: url('pic/header\ 5.jpg'); 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     padding: clamp(70px, 12vw, 120px) 0;
     position: relative;
     overflow: hidden;
 }
 .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.0); /* ← adjust darkness: 0=transparent, 1=black */
+    background-color: rgba(0, 0, 0, 0,70); /* ← adjust darkness: 0=transparent, 1=black */
     position: absolute;
     top: 0;
     left: 0;
@@ -201,6 +201,45 @@ body {
     position: relative;
     text-align: center;
     z-index: 2; 
+}
+/* ========= HERO CONTENT BOX — WHITE STYLE ========= */
+.hero-content-box {
+    background-color: rgba(255, 255, 255, 0.92); /* ✅ Clean white with soft transparency */
+    backdrop-filter: blur(10px);
+    padding: clamp(35px, 6vw, 55px) clamp(30px, 5vw, 50px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ✅ Dark text inside white box for contrast */
+.hero-content-box .hero-title {
+    color: var(--primary); /* Uses your brand dark brown */
+    text-shadow: none;
+}
+.hero-content-box .hero-title span {
+    color: var(--accent); /* Your accent color */
+}
+.hero-content-box .hero-subtitle {
+    color: var(--gray); /* Soft dark gray */
+    opacity: 1;
+}
+
+/* ✅ Buttons adjusted for white box background */
+.hero-content-box .btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+.hero-content-box .btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.hero-content-box .btn-secondary:hover {
+    background: var(--primary);
+    color: #fff;
 }
 .hero-title {
     font-size: clamp(2rem, 5vw, 3.2rem);
@@ -360,6 +399,30 @@ body {
     display: flex; align-items: center; justify-content: center;
     font-size: clamp(40px, 6vw, 52px); color: #CBD5E1;
 }
+.property-img-placeholder5 { /*Seperate it */
+    height: clamp(150px, 25vw, 180px);
+    background: linear-gradient(135deg, #E2E8F0, #F1F5F9);
+    background-image: url('pic/ssssssss.jpg'); /* ← Replace with YOUR image path */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: parallax */
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-size: clamp(40px, 6vw, 52px); color: #CBD5E1;
+}
+.property-img-placeholder6 { /*Seperate it */
+    height: clamp(150px, 25vw, 180px);
+    background: linear-gradient(135deg, #E2E8F0, #F1F5F9);
+    background-image: url('pic/ssssssss.jpg'); /* ← Replace with YOUR image path */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: parallax */
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-size: clamp(40px, 6vw, 52px); color: #CBD5E1;
+}
 .property-body { padding: clamp(16px, 3vw, 20px); }
 .property-name {
     font-size: clamp(1rem, 1.5vw, 1.05rem);
@@ -375,6 +438,48 @@ body {
 .property-meta {
     display: flex; flex-wrap: wrap; gap: 8px 14px;
     margin-bottom: 10px; font-size: 0.9rem; color: var(--gray);
+}
+/* ========= VIEW MORE BOX ========= */
+.view-more-box {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f1f5f9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view-more-box h3 {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.view-more-box p {
+    color: #64748b;
+    margin-bottom: 22px;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.25);
 }
 .property-meta i { color: var(--primary); margin-right: 4px; }
 .property-furnish { font-size: 0.9rem; color: var(--gray); }
